@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Labiba Rahman Oroni — Full-Stack Developer</title>
+<style>
+:root{--bg:#05070f;--bg2:#0a1022;--card:rgba(255,255,255,.04);--line:rgba(120,160,255,.18);--tx:#f2f5ff;--mut:#9aa6c4;--blue:#3b82f6;--cy:#22d3ee;--vi:#8b5cf6;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#101a3a 0,transparent 60%),var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(5,7,15,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:700;letter-spacing:.02em}.logo b{color:var(--cy)}
+.links{display:flex;gap:4px}
+.links a{padding:8px 12px;border-radius:8px;color:var(--mut);font-size:.92rem;transition:.2s}
+.links a:hover,.links a.on{color:var(--tx);background:rgba(59,130,246,.14)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:8px 12px;font-size:1rem;cursor:pointer}
+section{padding:96px 0;position:relative}
+.hero{min-height:100vh;display:flex;align-items:center;padding:110px 0 60px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:20px;align-items:center}
+.eyebrow{color:var(--cy);letter-spacing:.2em;font-size:.8rem;font-weight:600}
+h1{font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.05;margin:.3em 0;background:linear-gradient(120deg,#fff 30%,#93c5fd 70%,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:1.35rem;height:2em;color:#c7d2fe}.role span{border-right:2px solid var(--cy);padding-right:3px}
+.lead{color:var(--mut);max-width:520px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;border:1px solid var(--line);transition:.25s;cursor:pointer;background:none;color:var(--tx);font:inherit;font-weight:600}
+.btn.p{background:linear-gradient(120deg,var(--blue),var(--vi));border-color:transparent;box-shadow:0 8px 30px rgba(59,130,246,.35)}
+.btn:hover{transform:translateY(-3px);border-color:var(--cy)}
+.soc{display:flex;gap:10px}.soc a{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;transition:.2s;font-size:.8rem;font-weight:700}
+.soc a:hover{border-color:var(--cy);color:var(--cy);transform:translateY(-3px)}
+#scene{height:560px;position:relative}
+#scene canvas{width:100%!important;height:100%!important;display:block}
+.fallback{display:none;height:100%;place-items:center;text-align:center;color:var(--mut);border:1px dashed var(--line);border-radius:20px}
+.scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);width:24px;height:40px;border:2px solid var(--mut);border-radius:14px}
+.scroll::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;background:var(--cy);border-radius:2px;animation:sc 1.6s infinite}
+@keyframes sc{50%{transform:translateY(12px);opacity:.2}}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px}
+.sub{color:var(--cy);letter-spacing:.18em;font-size:.78rem;font-weight:600}
+.glass{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;backdrop-filter:blur(8px);transition:.3s}
+.glass:hover{border-color:rgba(34,211,238,.45);transform:translateY(-4px);box-shadow:0 14px 40px rgba(34,211,238,.08)}
+.grid{display:grid;gap:18px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:start;margin-top:28px}
+.about p{color:var(--mut);margin:0 0 14px}
+.chip{display:inline-block;padding:4px 11px;margin:3px 4px 3px 0;border:1px solid var(--line);border-radius:999px;font-size:.82rem;color:#cbd5ff;background:rgba(59,130,246,.07)}
+.glass h3{margin:0 0 10px;font-size:1.05rem}
+.pc{display:flex;flex-direction:column;cursor:pointer;overflow:hidden;padding:0}
+.pv{height:170px;position:relative;overflow:hidden;color:#dbe4ff}
+.pl{position:absolute;left:14px;top:9px;font-size:.65rem;letter-spacing:.15em;font-weight:600}
+.mw{position:absolute;left:14px;right:14px;top:30px;bottom:-8px;background:rgba(8,12,28,.88);border:1px solid rgba(255,255,255,.18);border-radius:10px 10px 0 0;padding:9px;display:flex;gap:6px;flex-wrap:wrap;align-content:flex-start}
+.mw i{display:block;background:rgba(255,255,255,.14);border-radius:4px;height:8px;flex:1 1 100%}
+.mw .w4{flex:0 0 40%}.mw .w6{flex:0 0 60%}.mw .w8{flex:0 0 80%}
+.mw .t{flex:1 1 26%;height:52px;border-radius:6px}.mw .g{background:linear-gradient(135deg,#fde68a,#b45309)}.mw .a{background:linear-gradient(135deg,#a78bfa,#2563eb);height:60px}.mw .v{background:linear-gradient(180deg,#6366f1,#4338ca)}
+.mw .r{height:14px;border-left:4px solid #2dd4bf}
+.mw .c{font-size:.68rem;padding:3px 8px;border:1px solid rgba(147,197,253,.5);border-radius:999px;color:#bfdbfe}
+.pb{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pb p{margin:0;color:var(--mut);font-size:.93rem}
+.pb .row{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.sm{padding:8px 14px;font-size:.85rem;border-radius:10px}
+.tl{border-left:2px solid var(--line);margin-left:8px;padding-left:26px;display:grid;gap:22px}
+.tl .it{position:relative}.tl .it::before{content:"";position:absolute;left:-34px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--cy);box-shadow:0 0 14px var(--cy)}
+.tl h3{margin:0}.tl small{color:var(--cy)}.tl ul{margin:8px 0 0;padding-left:18px;color:var(--mut)}
+dialog{background:#0b1226;color:var(--tx);border:1px solid var(--line);border-radius:20px;max-width:620px;width:calc(100% - 32px);padding:28px}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+dialog ul{color:var(--mut);padding-left:18px}.note{font-size:.85rem;color:#fbbf24}
+form{display:grid;gap:14px}
+label{font-size:.88rem;color:var(--mut)}
+input,textarea{width:100%;margin-top:6px;padding:12px 14px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;color:var(--tx);font:inherit}
+.err{color:#fda4af;font-size:.82rem;min-height:1em}.ok{color:#6ee7b7}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.hero .wrap,.about,.g3,.g2{grid-template-columns:1fr}#scene{height:340px;order:-1}.burger{display:block}
+.links{position:absolute;top:64px;left:0;right:0;flex-direction:column;background:#070b18;padding:10px 22px 18px;border-bottom:1px solid var(--line);display:none}.links.open{display:flex}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.scroll::after{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#home">LRO<b>.</b>dev</a>
+<button class="burger" id="bg" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+<div class="links" id="lk"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a></div></div></nav>
+
+<header id="home" class="hero"><div class="wrap">
+<div>
+<div class="eyebrow">HELLO, WORLD! I’M</div>
+<h1>Labiba Rahman Oroni</h1>
+<div class="role" aria-live="polite"><span id="role">Full-Stack Developer</span></div>
+<p class="lead">I build practical web applications, explore intelligent systems, and turn ideas into working software.</p>
+<div class="btns"><a class="btn p" href="#projects">Explore My Work</a><a class="btn" href="#contact">Get in Touch</a></div>
+<div class="soc"><a href="https://github.com/Labiba-Rahman-Oroni" target="_blank" rel="noopener" aria-label="GitHub">GH</a><a href="https://www.linkedin.com/in/labiba-rahman-a4800130b/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a><a href="mailto:labibarahman.pro@gmail.com" aria-label="Email">@</a></div>
+</div>
+<div id="scene" aria-hidden="true"><div class="fallback" id="fb"><p>3D scene unavailable on this device.<br>The rest of the portfolio works normally.</p></div></div>
+</div><div class="scroll"></div></header>
+
+<section id="about"><div class="wrap rv">
+<div class="sub">ABOUT</div><h2>Building with curiosity</h2>
+<div class="about"><div>
+<p>I am a Computer Science and Engineering student at BRAC University with a strong interest in software development and full-stack web development. I enjoy solving problems, learning new technologies, and building applications that address practical needs.</p>
+<p>My experience includes developing web applications, working with databases and APIs, exploring machine learning, and collaborating on academic software projects. I am also building NilMoni, an e-commerce platform connected to my own jewellery business.</p>
+<p>I am continuously improving my software engineering skills through projects, teamwork, and problem-solving practice.</p></div>
+<div class="glass"><h3>At a glance</h3><span class="chip">Dhaka, Bangladesh</span><span class="chip">BRAC University</span><span class="chip">Expected 2027</span><span class="chip">100+ LeetCode problems</span><span class="chip">Bangla · English · French (basic)</span></div></div>
+</div></section>
+
+<section id="skills"><div class="wrap rv"><div class="sub">SKILLS</div><h2>Technical toolkit</h2><div class="grid g3" id="sk" style="margin-top:26px"></div></div></section>
+
+<section id="projects"><div class="wrap rv"><div class="sub">PROJECTS</div><h2>Featured work</h2><div class="grid g3" id="pj" style="margin-top:26px"></div></div></section>
+
+<section id="experience"><div class="wrap rv"><div class="sub">EXPERIENCE &amp; LEADERSHIP</div><h2>Where I’ve worked and led</h2>
+<div class="tl" style="margin-top:28px">
+<div class="it"><small>Apr 2026 – Present · Dhaka, Bangladesh</small><h3>Founder — NilMoni</h3><ul><li>Built and maintain a full-stack e-commerce website using React.js, Node.js, Express.js, and MySQL.</li><li>Develop responsive interfaces and backend features for product listings, order processing, and business operations.</li><li>Manage customer orders, inventory, website maintenance, and digital marketing.</li></ul></div>
+<div class="it"><small>Dec 2024 – Aug 2026</small><h3>Human Resources Executive — Robotics Club of BRAC University (ROBU)</h3><ul><li>Supported recruitment, member engagement, and event coordination.</li></ul></div>
+<div class="it"><small>Jun 2023 – Aug 2024</small><h3>Junior Executive — BRAC University Computer Club (BUCC)</h3><ul><li>Participated in club activities and represented the club at a university fair.</li></ul></div>
+<div class="it"><small>Jan 2024 – Dec 2024</small><h3>Apprentice — ROBU</h3></div>
+<div class="it"><small>Mar 2024 – Sep 2025</small><h3>Apprentice — BRAC University Art &amp; Photography Society</h3></div>
+<div class="it"><small>May 2020 – Jan 2022</small><h3>Freelance Writer &amp; Graphic Designer</h3><ul><li>Created written content, logos, and graphic designs for international clients using Canva and Adobe Illustrator.</li><li>Delivered client projects according to requirements and deadlines.</li></ul></div>
+</div></div></section>
+
+<section id="education"><div class="wrap rv"><div class="sub">EDUCATION &amp; ACHIEVEMENTS</div><h2>Learning path</h2>
+<div class="grid g2" style="margin-top:26px">
+<div class="glass"><h3>B.Sc. in Computer Science &amp; Engineering</h3><p style="color:var(--mut);margin:0 0 10px">BRAC University, Dhaka · Expected graduation 2027</p><span class="chip">Data Structures</span><span class="chip">Algorithms</span><span class="chip">Discrete Mathematics</span><span class="chip">Database Systems</span><span class="chip">Computer Networks</span><span class="chip">Artificial Intelligence</span><span class="chip">Software Engineering</span></div>
+<div class="glass"><h3>Achievements</h3><ul style="color:var(--mut);padding-left:18px;margin:0"><li>Solved 100+ LeetCode problems.</li><li>2nd place, Line Following Robot competition, RoboSphere 2025.</li></ul></div>
+<div class="glass" style="grid-column:1/-1"><h3>Certifications</h3><ul style="color:var(--mut);padding-left:18px;margin:0"><li>Global Consumer Intelligence (GCI World) Data Science Course — University of Tokyo Matsuo-Iwasawa Laboratory (In Progress)</li><li>Data Science &amp; Machine Learning with Python and R — Data Solution-360</li><li>Advanced Graphic Design — BRAC University</li><li>Graphic Design — BRAC-ISD</li><li>Introduction to Programming Using Python — BRAC-ISD</li><li>Basics of Robotics — Robotics Club of BRAC University</li></ul></div>
+</div></div></section>
+
+<section id="contact"><div class="wrap rv"><div class="sub">CONTACT</div><h2>Have an idea? Let’s build something meaningful.</h2>
+<div class="grid g2" style="margin-top:26px">
+<div class="glass"><h3>Reach me</h3><p><a href="mailto:labibarahman.pro@gmail.com">labibarahman.pro@gmail.com</a></p><p><a href="https://github.com/Labiba-Rahman-Oroni" target="_blank" rel="noopener">github.com/Labiba-Rahman-Oroni</a></p><p><a href="https://www.linkedin.com/in/labiba-rahman-a4800130b/" target="_blank" rel="noopener">linkedin.com/in/labiba-rahman-a4800130b</a></p></div>
+<form class="glass" id="cf" novalidate>
+<label>Name<input id="n" autocomplete="name"><span class="err" id="en"></span></label>
+<label>Email<input id="e" type="email" autocomplete="email"><span class="err" id="ee"></span></label>
+<label>Message<textarea id="m" rows="4"></textarea><span class="err" id="em"></span></label>
+<button class="btn p" type="submit">Open in my email app</button><div class="err" id="st" role="status"></div></form>
+</div></div></section>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> Labiba Rahman Oroni</span><span><a href="https://github.com/Labiba-Rahman-Oroni" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/labiba-rahman-a4800130b/" target="_blank" rel="noopener">LinkedIn</a></span></div></footer>
+
+<dialog id="dg"><div id="dgc"></div><div class="btns"><button class="btn sm" id="dx">Close</button></div></dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const GH="https://github.com/Labiba-Rahman-Oroni";
+const skills={"Languages":["JavaScript","Python","C++","PHP","SQL","R"],"Frontend":["React.js","HTML5","CSS3","Tailwind CSS","Vite","Responsive Design"],"Backend & Databases":["Node.js","Express.js","REST APIs","MySQL","Authentication","RBAC"],"Tools & Practices":["Git","GitHub","Postman","VS Code","Scrum","Debugging"],"Data & ML":["Pandas","NumPy","Matplotlib","Machine Learning"],"Design":["Canva","Adobe Photoshop","Adobe Illustrator"]};
+const projects=[
+{n:"NilMoni E-Commerce",c:"Full-stack · Founder project",g:"linear-gradient(135deg,#7c3aed,#be185d)",d:"Full-stack e-commerce website connected to my jewellery business.",t:["React.js","Node.js","Express.js","MySQL"],f:["Product listings","Order processing","Inventory management","Responsive interfaces"],r:"Built and maintain the site; also manage orders, inventory, and digital marketing.",u:GH+"/Nil-Moni",exact:1},
+{n:"FBMS",c:"Team project · Full-stack",g:"linear-gradient(135deg,#1d4ed8,#0891b2)",d:"Team-based system for franchise brand assets, marketing campaigns, and branch operations, developed for CSE470 (Software Engineering) at BRAC University.",t:["React.js","Node.js","Express.js","MySQL"],f:["Brand asset management","Campaign management","Branch operations","Backend APIs","RBAC"],r:"Team project. Your individual contributions need your input before being listed here.",u:GH+"/FBMS-franchise-brand-management-system-",exact:1},
+{n:"MIMS",c:"Healthcare · Database-driven",g:"linear-gradient(135deg,#0f766e,#2563eb)",d:"Database-driven healthcare application for doctor appointments, prescriptions, and patient records.",t:["JavaScript","Database Systems"],f:["Doctor appointments","Prescriptions","Patient records"],r:"Listed on my CV; detailed role to be confirmed.",u:GH+"/MIMS",exact:1},
+{n:"Disease Type Prediction",c:"Machine learning",g:"linear-gradient(135deg,#6d28d9,#2563eb)",d:"CSE422 AI project: a multiclass disease-category (A/B/C) classifier comparing several algorithms.",t:["Python","Machine Learning","Jupyter Notebook"],f:["KNN","Decision Trees","Logistic Regression","Naive Bayes","Neural Networks"],r:"Individual ML project listed on my CV. No accuracy figures are claimed.",u:GH+"/Disease-Type-Prediction-ML",exact:1},
+{n:"BookLoop",c:"Marketplace concept",g:"linear-gradient(135deg,#b45309,#7c3aed)",d:"Online marketplace concept for exchanging and trading books.",t:["JavaScript"],f:["Concept: book exchange and trading"],r:"Presented as a concept; no completed features are claimed.",u:GH+"/BookLoop",exact:1},
+{n:"Tic-Tac-Toe",c:"Python · Practice project",g:"linear-gradient(135deg,#334155,#0e7490)",d:"Beginner-friendly Python game built to practise programming logic.",t:["Python"],f:["Game logic practice"],r:"Small personal practice project.",u:GH+"/tic_tack_toe",exact:1},
+{n:"Face Recognition Project",c:"Computer vision",g:"linear-gradient(135deg,#0e7490,#4338ca)",d:"A face recognition project. The repository is public but no code has been uploaded yet.",t:[],f:["Face recognition"],r:"Details and technologies need your input before being listed here.",u:GH+"/face-recognition-project"},
+{n:"GCI World Assignment",c:"Data science · Coursework",g:"linear-gradient(135deg,#be123c,#4338ca)",d:"Assignment for the Global Consumer Intelligence (GCI World) data science course, University of Tokyo Matsuo-Iwasawa Laboratory.",t:["Jupyter Notebook"],f:["Course assignment notebook"],r:"Coursework submitted during the (in-progress) GCI World course.",u:GH+"/GCI-World-Assignment"}];
+const T=(c,n)=>Array(n).fill(`<i class="t ${c}"></i>`).join(""),C=a=>a.map(x=>`<span class="c">${x}</span>`).join(""),X="background:rgba(255,255,255,.1);border-radius:6px;height:34px;display:grid;place-items:center";
+const mk={"NilMoni E-Commerce":`<div class="mw"><i class="w6"></i>${T("g",3)}<i class="w4"></i><i class="w8"></i></div>`,
+"FBMS":`<div class="mw"><i class="t v" style="flex:0 0 18%;height:92px"></i><div style="flex:1;display:grid;gap:6px;align-content:start"><i class="w6"></i><i class="t"></i><i class="w8"></i></div></div>`,
+"MIMS":`<div class="mw"><i class="w4"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i></div>`,
+"Disease Type Prediction":`<div class="mw">${C(["Data","Preprocess","Train","Compare"])}${C(["KNN","Trees","LogReg","NB","NN"])}</div>`,
+"BookLoop":`<div class="mw"><i style="height:12px;border-radius:8px"></i>${T("a",4)}</div>`,
+"Tic-Tac-Toe":`<div class="mw" style="display:grid;grid-template-columns:repeat(3,40px);gap:4px;justify-content:center;align-content:center;font:700 1.1rem monospace">${["X","O","X","","X","O","O","","X"].map(x=>`<b style="${X}">${x}</b>`).join("")}</div>`,
+"Face Recognition Project":`<div class="mw" style="justify-content:center;align-content:center"><i style="flex:0 0 60px;height:60px;border-radius:50%;border:2px dashed #67e8f9;background:none"></i></div>`,
+"GCI World Assignment":`<div class="mw">${C(["Notebook","Analysis"])}<i class="w8"></i><i class="w6"></i><i class="t"></i></div>`};
+projects.forEach(p=>p.m=mk[p.n]);
+const $=s=>document.querySelector(s);
+$("#yr").textContent=new Date().getFullYear();
+$("#sk").innerHTML=Object.entries(skills).map(([k,v])=>`<div class="glass"><h3>${k}</h3>${v.map(x=>`<span class="chip">${x}</span>`).join("")}</div>`).join("");
+$("#pj").innerHTML=projects.map((p,i)=>`<article class="glass pc" tabindex="0" data-i="${i}" role="button" aria-label="${p.n} details"><div class="pv" style="background:${p.g}"><span class="pl">${p.c.toUpperCase()}</span>${p.m||""}</div><div class="pb"><h3 style="margin:0">${p.n}</h3><p>${p.d}</p><div>${p.t.map(x=>`<span class="chip">${x}</span>`).join("")}</div><div class="row"><span class="btn sm">Details</span>${p.u?`<a class="btn sm" href="${p.u}" target="_blank" rel="noopener">GitHub repo</a>`:`<span class="btn sm" style="opacity:.6">Private repo</span>`}</div></div></article>`).join("");
+const dg=$("#dg");
+function open(i){const p=projects[i];$("#dgc").innerHTML=`<div class="sub">${p.c.toUpperCase()}</div><h2>${p.n}</h2><p style="color:var(--mut)">${p.d}</p><div>${p.t.map(x=>`<span class="chip">${x}</span>`).join("")}</div><h3>Key features</h3><ul>${p.f.map(x=>`<li>${x}</li>`).join("")}</ul><h3>My contribution</h3><p class="note">${p.r}</p>${p.u?`<p><a class="btn p sm" href="${p.u}" target="_blank" rel="noopener">View on GitHub ↗</a></p>`:""}`;dg.showModal()}
+document.querySelectorAll(".pc").forEach(c=>{c.addEventListener("click",e=>{if(!e.target.closest("a"))open(c.dataset.i)});c.addEventListener("keydown",e=>{if(e.key==="Enter")open(c.dataset.i)})});
+$("#dx").onclick=()=>dg.close();dg.addEventListener("click",e=>{if(e.target===dg)dg.close()});
+// nav
+const lk=$("#lk"),bg=$("#bg");bg.onclick=()=>{const o=lk.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
+lk.querySelectorAll("a").forEach(a=>a.onclick=()=>lk.classList.remove("open"));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.1});document.querySelectorAll(".rv").forEach(x=>io.observe(x));
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)lk.querySelectorAll("a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-45% 0px -50% 0px"});document.querySelectorAll("header,section").forEach(s=>so.observe(s));
+// typing roles
+const roles=["Full-Stack Developer","Software Development Enthusiast","CSE Student","Problem Solver"],rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!rm){let ri=0,ci=roles[0].length,del=true;const el=$("#role");(function t(){const w=roles[ri];ci+=del?-1:1;el.textContent=w.slice(0,ci);let d=del?35:70;if(!del&&ci===w.length){del=true;d=1600}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;d=300}setTimeout(t,d)})()}
+// form
+$("#cf").addEventListener("submit",e=>{e.preventDefault();const n=$("#n").value.trim(),m=$("#m").value.trim(),em=$("#e").value.trim();
+$("#en").textContent=n?"":"Please enter your name.";$("#ee").textContent=/^\S+@\S+\.\S+$/.test(em)?"":"Please enter a valid email.";$("#em").textContent=m.length>=10?"":"Message should be at least 10 characters.";
+if(!n||!/^\S+@\S+\.\S+$/.test(em)||m.length<10){$("#st").className="err";$("#st").textContent="Please fix the highlighted fields.";return}
+$("#st").className="err ok";$("#st").textContent="Opening your email app. The message is sent only when you press send there.";
+location.href=`mailto:labibarahman.pro@gmail.com?subject=${encodeURIComponent("Portfolio message from "+n)}&body=${encodeURIComponent(m+"\n\nReply to: "+em)}`});
+// 3D
+(function(){const host=$("#scene");let r;try{const c=document.createElement("canvas");if(!(c.getContext("webgl")||c.getContext("experimental-webgl"))||!window.THREE)throw 0;
+r=new THREE.WebGLRenderer({antialias:true,alpha:true});}catch(e){$("#fb").style.display="grid";return}
+r.setPixelRatio(Math.min(devicePixelRatio,2));host.appendChild(r.domElement);
+const s=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100);cam.position.set(0,.6,7);
+s.add(new THREE.AmbientLight(0x6b7cff,.6));const k=new THREE.PointLight(0x22d3ee,2.2,30);k.position.set(4,4,5);s.add(k);const k2=new THREE.PointLight(0x8b5cf6,1.8,30);k2.position.set(-5,-2,3);s.add(k2);
+const g=new THREE.Group();s.add(g);
+const mm=(c,m=.8,ro=.3)=>new THREE.MeshStandardMaterial({color:c,metalness:m,roughness:ro});
+const base=new THREE.Mesh(new THREE.BoxGeometry(2.6,.12,1.7),mm(0x1b2442));base.position.y=-.5;g.add(base);
+const scr=new THREE.Group();scr.position.set(0,-.44,-.85);scr.rotation.x=-.22;g.add(scr);
+const lid=new THREE.Mesh(new THREE.BoxGeometry(2.6,1.6,.08),mm(0x151d38));lid.position.y=.8;scr.add(lid);
+const dsp=new THREE.Mesh(new THREE.PlaneGeometry(2.4,1.42),new THREE.MeshBasicMaterial({color:0x0b1a3a}));dsp.position.set(0,.8,.05);scr.add(dsp);
+[[.3,0x22d3ee],[.1,0x3b82f6],[-.1,0x8b5cf6],[-.3,0x22d3ee]].forEach(([y,c],i)=>{const b=new THREE.Mesh(new THREE.PlaneGeometry(1.0+i%2*.5,.07),new THREE.MeshBasicMaterial({color:c}));b.position.set(-.5+i%2*.2,.8+y,.06);scr.add(b)});
+const keys=new THREE.Mesh(new THREE.PlaneGeometry(2.2,.9),new THREE.MeshStandardMaterial({color:0x0e1530,metalness:.5,roughness:.6}));keys.rotation.x=-Math.PI/2;keys.position.set(0,-.43,.1);g.add(keys);
+const rings=[];[[2.4,.012,0x22d3ee,.5],[3.0,.01,0x8b5cf6,-1.1],[3.6,.008,0x3b82f6,.2]].forEach(([R,t,c,tilt])=>{const m=new THREE.Mesh(new THREE.TorusGeometry(R,t,8,120),new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:.6}));m.rotation.x=Math.PI/2+tilt*.4;m.rotation.y=tilt;g.add(m);rings.push(m)});
+const sh=[new THREE.OctahedronGeometry(.22),new THREE.IcosahedronGeometry(.2),new THREE.TorusKnotGeometry(.14,.05,40,8),new THREE.BoxGeometry(.28,.28,.28)];const fl=[];
+sh.forEach((geo,i)=>{const m=new THREE.Mesh(geo,mm([0x22d3ee,0x8b5cf6,0x3b82f6,0x67e8f9][i],.6,.25));m.userData={a:i*1.6,R:2.6+i*.25,y:(i-1.5)*.55};g.add(m);fl.push(m)});
+const N=400,pa=new Float32Array(N*3);for(let i=0;i<N*3;i++)pa[i]=(Math.random()-.5)*14;const pg=new THREE.BufferGeometry();pg.setAttribute("position",new THREE.BufferAttribute(pa,3));
+const pts=new THREE.Points(pg,new THREE.PointsMaterial({size:.035,color:0x93c5fd,transparent:true,opacity:.8}));s.add(pts);
+let mx=0,my=0;addEventListener("pointermove",e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+function rs(){const w=host.clientWidth,h=host.clientHeight;r.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix()}rs();addEventListener("resize",rs);
+let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(host);const clk=new THREE.Clock();
+(function loop(){requestAnimationFrame(loop);if(!vis)return;const t=rm?0:clk.getElapsedTime();
+g.rotation.y+=((mx*.8+Math.sin(t*.4)*.25)-g.rotation.y)*.05;g.rotation.x+=((my*.4)-g.rotation.x)*.05;g.position.y=Math.sin(t)*.12;
+rings.forEach((m,i)=>m.rotation.z=t*(.15+i*.08));fl.forEach(m=>{const u=m.userData,a=u.a+t*.5;m.position.set(Math.cos(a)*u.R,u.y+Math.sin(t+u.a)*.15,Math.sin(a)*u.R);m.rotation.x=t;m.rotation.y=t*.7});
+pts.rotation.y=t*.02;r.render(s,cam)})();})();
+</script>
+</body>
+</html>
